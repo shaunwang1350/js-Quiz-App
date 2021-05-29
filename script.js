@@ -2,35 +2,35 @@ const quizData = [
     {
         question: 'What is the most used programming language in 2020?',
         a:'Java',
-        b:'R rrrrr',
+        b:'R or "rrrrr"',
         c:'Python',
         d:'JavaScript',
-        correct: 'Python. I\'m glad you did not select R!'
+        correct: 'c'
     },
     {
         question: 'Who is the President of US?',
         a:'Donald Trump',
         b:'Xi Jing Ping',
-        c:'Joe Biden',
-        d:'Kanye',
-        correct: 'Old Joe, but Kanye tho?'
+        c:'Kanye',
+        d:'Joe Biden',
+        correct: 'd'
+    },
+    {
+        question: 'Fastest way to get rich?',
+        a:'Only Fans',
+        b:'A good 9 - 5 job',
+        c:'Doge Coin',
+        d:'AMC gang',
+        correct: 'b'
     },
     {
         question: 'Is cereal soup?',
-        a:'Um, yes!',
+        a:'Cmon man...stop!',
         b:'No, you are a psychopath',
-        c:'Life is relative, bro',
+        c:'Umm, yes',
         d:'I\'m a guy of Semiotics guy',
-        correct: 'Just stop...'
+        correct: 'a'
     },
-    {
-        question: 'Is cereal soup?',
-        a:'Um, yes!',
-        b:'No, you are a psychopath',
-        c:'Life is relative, bro',
-        d:'I\'m a guy of Semiotics guy',
-        correct: 'Just stop...'
-    }
 ];
 
 const quiz = document.getElementById("quiz");
@@ -91,10 +91,16 @@ submitBtn.addEventListener("click", () => {
             loadQuiz();
         } else {
             quiz.innerHTML = `
-                <h2>You answered correctly at ${score}/${quizData.length} questions.</h2>
-                
+                <h2>You answered ${score}/${quizData.length} questions correctly.</h2>
+                <ol style="font-size: 1.2rem; margin: 3rem 1rem;">
+                    <li style="margin: 1.2rem 0;"> <i>'What is the most used programming language in 2020?' </i> <br> <b>correct answer: </b>  Python. Did you select R!</li>
+                    <li style="margin: 1.2rem 0;"> <i>'Who is the President of US?' </i> <br> <b>correct answer: </b> Old Joe, but Kanye tho?</li>
+                    <li style="margin: 1.2rem 0;"> <i>'Fastest way to get rich?' </i> <br> <b>correct answer: </b> Cmon now, a good 9 - 5 job? Slow and steady wins the race?</li>
+                    <li style="margin: 1.2rem 0;"> <i>'Is cereal soup?' </i> <br> <b>correct answer: </b> Just stop man...</li>
+                </ol>
                 <button onclick="location.reload()">Reload</button>
             `;
         }
     }
 });
+
